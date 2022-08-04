@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+</head>
+<body>
+
+    <p id="test"></p>
+    
+    <script>
+        /* Object constructors
+
+        function Student (firstName, lastName) {
+            this.firstName = firstName
+            this.lastName = lastName
+            this.displayFullName = function () {
+                console.log(this.firstName + ' ' + this.lastName)
+            }
+        }
+
+        let sai = new Student ('Shanmukh', 'Sai')
+
+        console.log(sai)
+
+        sai.displayFullName()
+
+        */
+
+
+        /* Inbult object constructors
+        1. Number
+        2. String
+        3. Boolean
+
+        To get primitive value out of these typed objects, use the valueOf() method.
+        */
+
+        // let a = 5
+        // console.log(a)
+
+        // let b = new Number(5)
+        // console.log(b.valueOf())
+
+        // let c = new String('shannu')
+        // console.log(c.valueOf())
+
+        // let d = new Boolean(true)
+        // console.log(d.valueOf())
+
+        // const a = 5
+        // a = 10
+        // console.log(a)
+
+        // var obj = {
+        //     name : 'sai'
+        // }
+
+        // obj = {
+        //     name : 'shannu'
+        // }
+
+        // console.log(obj)
+        
+     /*  const obj = {
+            a: 5,
+            b: 10
+        }
+
+        // document.getElementById('test').innerText = obj  op:- [object, object] => Trying to add object inside DOM
+
+        document.getElementById('test').innerText = JSON.stringify(obj)
+
+        JSON.stringify(obj) - converts obj to string
+        JSON.parse(String- obj) - converts string to obj
+
+        comsole.log(JSON.parse('{"a":2, "b": 3}'))
+     */
+
+     /* 
+        data store in stacks nd heap
+
+        primitives will go to stack
+
+        Non-primitive will go to heap but declared in stack - and reference in heap
+
+        we can change values of the reference in heap but not the reference.
+
+     
+     */
+
+    </script>
+</body>
+</html>

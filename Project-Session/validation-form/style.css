@@ -1,0 +1,26 @@
+.container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.registration-form {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.form-check {
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .container .registration-form {
+        text-align: left;
+        width: 80vw;
+    }
+}
+

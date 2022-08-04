@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Methods</title>
+</head>
+<body>
+    <script>
+        // Standard syntax
+        // function abc () {
+        //     console.log('abc')
+        // }
+
+        // Anonymous Function
+
+        // let abc = function () {
+        //     console.log('abc')
+        // }
+
+        // Self-Invoking Functions - Functions which get invoked at the time of declaration itself
+
+        // (function abc () {
+        //     console.log('abc')
+        // }) ()
+
+        // Properties of Object - Those keys which hold values other than functions (eg: firstName, lastName)
+
+        // Method of Object - Those keys which hold function as value | eg: sayHi
+
+        // let sai = {
+        //     firstName : 'Shanmukh',
+        //     lastName : 'sai',
+        //     sayHi: function () {
+        //         console.log('Hi')
+        //     }
+        // }
+
+        // console.log(sai.firstName)
+        // sai.sayHi()
+
+        /* 
+        'this' keyword -> refere to the current Object
+
+        
+        let studentDetails = {
+            firstName: 'Shanmukh',
+            lastName: 'sai',
+            fullName: function () {
+                console.log(this.firstName + ' ' + this.lastName)
+            }
+        }
+
+        studentDetails.fullName()
+        */
+
+        /*
+        let sai = {
+            firstName: 'Shanmukh',
+            lastName: 'sai',
+            hobbies: ['singing', 'Gym'],
+            displayIntro: function () {
+                console.log('Hi my name is' + ' ' + this.firstName + ' ' + this.lastName + ' ' + 'and my hobbies are' + ' ' + this.hobbies.join(', ') + '.')
+            }
+        }
+
+        sai.displayIntro()
+        */
+
+        
+
+
+        // let studentDetails = {
+        //     firstName: 'Shanmukh',
+        //     lastName: 'sai',
+        //     age: function (yob) {
+        //         console.log(2022 - yob)
+        //     }
+        // }
+
+        // console.log(studentDetails.age(1999)) 
+
+    </script>
+    
+</body>
+</html>

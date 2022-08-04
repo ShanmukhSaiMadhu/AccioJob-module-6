@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+        // forEach, filter, map -> dont manipulate original array
+        
+        /* 
+            1. forEach 
+                - It iterate and run the callback for each element
+                - Cannot manipulate any elements inside the callback function for the original array
+                - Does not return any value
+
+            
+            
+        */
+
+            // let arr = [3, 1, 5, 2, 6]
+
+            // arr.forEach(function(element) {
+            //     console.log(element)
+            // })
+
+        // ------------------------------------------------
+
+        /* 
+            2. filter 
+                - It iterate and run the callback for each element
+                - Cannot manipulate any elements inside the callback function for the original array
+                - A condition needs to be returned inside the callback
+                - Filter methods returns a new array with all filtered elements which satisfy the given condition
+                - size of array is not same as original array
+            Syntax:
+            arr.filter(function(ele) {
+                return [condition]
+            })
+            
+        */
+
+        // let arr = [3, 1, 5, 2, 6]
+
+        // let filteredArray = arr.fil(function (ele) {
+        //     return ele % 2 === 1
+        // })
+
+        // console.log(filteredArray)
+
+        // ------------------------------------------------
+
+         /* 
+            3. map 
+                - It iterate and run the callback for each element
+                - Cannot manipulate any elements inside the callback function for the original array
+                - Inside the callback function, return updated elements for iteration.
+                - Map methods returns a new array with all updated elements which were returned for each iteration 
+                - size of array is exactly same as original array itelf
+            Syntax:
+            arr.filter(function(ele) {
+                return [condition]
+            })
+            
+        */
+
+        // let arr = [3, 1, 5, 2, 6]
+
+        // let updatedArray = arr.map(function (ele) {
+        //     return ;
+        // })
+        
+        // console.log(updatedArray)
+    </script>
+    
+</body>
+</html>

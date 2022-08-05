@@ -32,7 +32,7 @@ function validate () {
         document.getElementById('email-valid').style.display = 'none'
     }
 
-    if(cityInput.length >= 3) {
+    if(cityInput && cityInput.length >= 3 && !parseInt(cityInput) ) {
         document.getElementById('city-valid').style.display = 'block'
         document.getElementById('city-invalid').style.display = 'none'
     }else {
@@ -40,7 +40,15 @@ function validate () {
         document.getElementById('city-valid').style.display = 'none'
     }
 
-    if(zipInput) {
+    if(stateInput != 'choose') {
+        document.getElementById('state-valid').style.display = 'block'
+        document.getElementById('state-invalid').style.display = 'none'
+    }else {
+        document.getElementById('state-invalid').style.display = 'block'
+        document.getElementById('state-valid').style.display = 'none'
+    }
+
+    if(zipInput && parseInt(zipInput) && zipInput.length === 6) {
         document.getElementById('zip-valid').style.display = 'block'
         document.getElementById('zip-invalid').style.display = 'none'
     }else {
@@ -48,9 +56,9 @@ function validate () {
         document.getElementById('zip-valid').style.display = 'none'
     }
 
-    if(tnCInput == false) {
-        document.getElementById('tnC-invalid').style.display = 'block'
-    } else {
+    if(tnCInput) {
         document.getElementById('tnC-invalid').style.display = 'none'
+    } else {
+        document.getElementById('tnC-invalid').style.display = 'block'
     }
 }

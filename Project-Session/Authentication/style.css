@@ -1,3 +1,11 @@
+html {
+	scroll-behavior: smooth;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
 .registration-form, .login-form{
 	width: 800px;
 	margin: 10px auto;
@@ -8,12 +16,10 @@
 
 .login-form {
     margin-top: 100px;
+	padding: 10px 30px 30px;
 }
 
 .sign-up-title, .log-in-title, .button-wrapper {
     text-align: center;
 }
 
-.jumbotron {
-    text-align: center;
-}

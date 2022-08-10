@@ -11,7 +11,7 @@
 <body>
   <div class="container">
       <h1>Registration Form</h1>
-      <form class="row g-3 registration-form" novalidate>
+      <form class="row g-3 registration-form gradient-border" id="box" novalidate>
           <div class="col-md-4">
             <label for="first-name" class="form-label">First name</label>
             <input type="text" class="form-control" id="first-name" autocomplete="off">
@@ -113,6 +113,16 @@
               Please provide a valid zip.
             </div>
           </div>
+          <div class="col-md-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" autocomplete="off">
+            <div class="valid-feedback" id="address-valid">
+              Looks good!
+            </div>
+            <div class="invalid-feedback" id="address-invalid">
+              Please provide a valid address.
+            </div>
+          </div>
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="tnC">
@@ -125,7 +135,7 @@
             </div>
           </div>
           <div class="col-12">
-            <button class="btn btn-dark btn-lg" type="button" onclick="validate()">Submit form</button>
+            <button class="btn btn-success btn-lg" type="button" onclick="validate()">Submit form</button>
           </div>
       </form>
   </div>

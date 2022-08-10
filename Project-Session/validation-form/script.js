@@ -6,6 +6,7 @@ function validate () {
     let cityInput = document.getElementById('city').value
     let stateInput = document.getElementById('state').value
     let zipInput = document.getElementById('zip').value
+    let addressInput = document.getElementById('address').value
     let tnCInput = document.getElementById('tnC').checked
 
     if(firstNameInput) {
@@ -16,12 +17,12 @@ function validate () {
         document.getElementById('first-name-valid').style.display = 'none'
     }
 
-    if(lastNameInput) {
-        document.getElementById('last-name-valid').style.display = 'block'
-        document.getElementById('last-name-invalid').style.display = 'none'
+    if(addressInput.length > 10) {
+        document.getElementById('address-valid').style.display = 'block'
+        document.getElementById('address-invalid').style.display = 'none'
     }else {
-        document.getElementById('last-name-invalid').style.display = 'block'
-        document.getElementById('last-name-valid').style.display = 'none'
+        document.getElementById('address-invalid').style.display = 'block'
+        document.getElementById('address-valid').style.display = 'none'
     }
 
     if(emailInput && emailInput.includes('@') && emailInput.includes('.') && emailInput.lastIndexOf('.') <= emailInput.length - 3 && emailInput.indexOf('@') != 0) {
@@ -54,6 +55,14 @@ function validate () {
     }else {
         document.getElementById('zip-invalid').style.display = 'block'
         document.getElementById('zip-valid').style.display = 'none'
+    }
+
+    if(lastNameInput) {
+        document.getElementById('last-name-valid').style.display = 'block'
+        document.getElementById('last-name-invalid').style.display = 'none'
+    }else {
+        document.getElementById('last-name-invalid').style.display = 'block'
+        document.getElementById('last-name-valid').style.display = 'none'
     }
 
     if(tnCInput) {

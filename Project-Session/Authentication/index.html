@@ -43,13 +43,25 @@
       <!-- ----------------------------- Header Image ----------------------------- -->
       <div class="jumbotron">
         <h1 class="display-4">Shannu's Website</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <p class="lead">This is a website for all your tour needs. Pick any destination and we'll get everything arranged for you!</p>
         <hr class="my-4">
-        <a class="btn btn-dark btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-dark btn-lg" href="#" role="button">Explores more</a>
       </div>
         <!-- -----------------------Sign Up---------------- -->
         <form class="row g-3 registration-form" id="signup-form">
             <h1 class="col-md-12 display-4 sign-up-title">Sign Up</h1>
+            <div class="alert alert-success alert-dismissible fade show signup-alert col-md-8" role="alert" id="signup-alert-success">
+              Signed up successfully!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show signup-alert col-md-8" role="alert" id="signup-alert-failure">
+              Sign up unsuccessful!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
             <div class="col-md-6">
               <label for="signup-first-name" class="form-label">First name</label>
               <input type="text" class="form-control" id="signup-first-name" required autocomplete="off">
@@ -121,15 +133,27 @@
         <!-- -----------------------------Log In------------- -->
 
         <form class="login-form" id="login-form">
-            <h1 class="display-4 log-in-title">Login</h1>  
+            <h1 class="display-4 log-in-title">Login</h1>
+            <div class="alert alert-success alert-dismissible fade show login-alert" role="alert" id="login-alert-success">
+              Access granted!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show login-alert" role="alert" id="login-alert-failure">
+              Access denied!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>  
             <div class="mb-3">
               <label for="login-email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" autocomplete="off">
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
               <label for="login-password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="login-password">
+              <input type="password" class="form-control" id="login-password" autocomplete="off">
             </div>
             <div class="button-wrapper">
                 <button type="button" class="btn btn-dark" onclick="login()">Log In</button>

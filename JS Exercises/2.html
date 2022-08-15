@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise 2</title>
+	<script>
+		let students =
+      [
+        {
+          name: 'Rama',
+          batch: 9,
+          likesIcecream: true,
+        },
+        {
+          name: 'Irfan',
+          batch: 8,
+          likesIcecream: false,
+        },
+        {
+          name: 'Swapneel',
+          batch: 7,
+          likesIcecream: false,
+        },
+        {
+          name: 'Sampath',
+          batch: 8,
+          likesIcecream: true,
+        },
+        {
+          name: 'Vishwanath',
+          batch: 9,
+          likesIcecream: true,
+        }
+      ]
+
+			// Q - Return array of only those students who like ice cream
+
+			// Solution - 1
+			// let studentsWhoLikeIcecream = []
+			// students.forEach(student => {
+			// 	if (student.likesIcecream) {
+			// 		studentsWhoLikeIcecream.push(student)
+			// 	}
+			// })
+
+			// let studentsWhoLikeIcecream = []
+			// students.forEach(student => student.likesIcecream ? studentsWhoLikeIcecream.push(student) : '')
+			// console.log(studentsWhoLikeIcecream)
+
+			// Solution - 2
+			// let studentsWhoLikeIcecream = students.filter(student => {
+			// 	return student.likesIcecream
+			// })
+			// console.log(studentsWhoLikeIcecream)
+
+			let studentsWhoLikeIcecream = students.filter(student => student.likesIcecream)
+			console.log(studentsWhoLikeIcecream)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

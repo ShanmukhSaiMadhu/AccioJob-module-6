@@ -66,6 +66,30 @@
 			- average marks secured
 		*/
 
+    // let studentScores = students.map( student => {
+    //     let marksArray = Object.values(student.marks)
+    //     let totalMarks = 0
+    //     marksArray.forEach(marks => {
+    //         totalMarks = totalMarks + marks
+    //     })
+
+    //     let averageMarks = totalMarks / marksArray.length
+    //     return {
+    //         name: student.name,
+    //         batch: student.batch,
+    //         averageMarks: averageMarks
+    //     }
+    // })
+
+    // console.log(studentScores)
+
+    /* ---------------------------------------------------------------- */
+		/* Q - Return array of only those students who have an avergae marks > 75 with following details:
+			- name
+			- batch
+			- average marks secured
+		*/
+
     let studentScores = students.map( student => {
         let marksArray = Object.values(student.marks)
         let totalMarks = 0
@@ -74,6 +98,7 @@
         })
 
         let averageMarks = totalMarks / marksArray.length
+
         return {
             name: student.name,
             batch: student.batch,
@@ -81,7 +106,16 @@
         }
     })
 
-    console.log(studentScores)
+    let finalStudentDetails = studentScores.filter(student => {
+      if(student.averageMarks > 75)
+      return {
+            name: student.name,
+            batch: student.batch,
+            averageMarks: student.averageMarks
+        }
+    })
+    
+    console.log(finalStudentDetails)
 
     </script>
 </head>

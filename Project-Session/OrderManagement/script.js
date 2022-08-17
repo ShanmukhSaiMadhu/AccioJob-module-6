@@ -1,19 +1,28 @@
+let orderStatus = document.getElementsByClassName('order-status-block')
+
 const executeOrder = () => {
-    console.log('order placed')
     let orderId = document.getElementById('order-id-input').value
-    console.log(orderId)
     document.getElementById('order-id-input').value = ''
+    
+    document.getElementById('order-id-display').innerText = `Order Status ID: ${orderId}`
+    let orderStatus = document.getElementsByClassName('order-status-block')
+    orderStatus[0].classList.remove('btn-light')
+    orderStatus[0].classList.add('btn-success')
+
+    chefReceivedOrder()
+    .then(pizzaSauceAdded)
+    .then(firstLayerOfCheeseAdded)
+    .then(toppingsAdded)
+    .then(secondLayerOfCheeseAdded)
+    .then(pizzaBaked)
+    .then(oreganoAdded)
+    .then(packageReceived)
+    .then(() => {
+        orderStatus[9].classList.remove('btn-light')
+        orderStatus[9].classList.add('btn-success')
+    } )
+    .catch((err) => console.log(err))
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -21,7 +30,8 @@ const executeOrder = () => {
 const chefReceivedOrder =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Chef received the order and started preparing')
+            orderStatus[1].classList.remove('btn-light')
+            orderStatus[1].classList.add('btn-success')
             resolve()
         }, 2000)
     })
@@ -30,7 +40,8 @@ const chefReceivedOrder =() => {
 const pizzaSauceAdded =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Pizza Sauce added')
+            orderStatus[2].classList.remove('btn-light')
+            orderStatus[2].classList.add('btn-success')
             resolve()
         }, 10000)
     })
@@ -39,7 +50,8 @@ const pizzaSauceAdded =() => {
 const firstLayerOfCheeseAdded =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('First layer of cheeze added')
+            orderStatus[3].classList.remove('btn-light')
+            orderStatus[3].classList.add('btn-success')
             resolve()
         }, 5000)
     })
@@ -48,7 +60,8 @@ const firstLayerOfCheeseAdded =() => {
 const toppingsAdded =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Toppings added')
+            orderStatus[4].classList.remove('btn-light')
+            orderStatus[4].classList.add('btn-success')
             resolve()
         }, 12000)
     })
@@ -57,7 +70,8 @@ const toppingsAdded =() => {
 const secondLayerOfCheeseAdded =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Second layer of cheeze added')
+            orderStatus[5].classList.remove('btn-light')
+            orderStatus[5].classList.add('btn-success')
             resolve()
         }, 5000)
     })
@@ -66,7 +80,8 @@ const secondLayerOfCheeseAdded =() => {
 const pizzaBaked =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Pizza baked!')
+            orderStatus[6].classList.remove('btn-light')
+            orderStatus[6].classList.add('btn-success')
             resolve()
         }, 15000)
     })
@@ -75,7 +90,8 @@ const pizzaBaked =() => {
 const oreganoAdded =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Oregano added and packed')
+            orderStatus[7].classList.remove('btn-light')
+            orderStatus[7].classList.add('btn-success')
             resolve()
         }, 8000)
     })
@@ -84,22 +100,9 @@ const oreganoAdded =() => {
 const packageReceived =() => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('Package received at counter')
+            orderStatus[8].classList.remove('btn-light')
+            orderStatus[8].classList.add('btn-success')
             resolve()
         }, 2000)
     })
 }
-
-// const executeOrder = () => {
-//     console.log('Order placed')
-//     chefReceivedOrder()
-//     .then(pizzaSauceAdded)
-//     .then(firstLayerOfCheeseAdded)
-//     .then(toppingsAdded)
-//     .then(secondLayerOfCheeseAdded)
-//     .then(pizzaBaked)
-//     .then(oreganoAdded)
-//     .then(packageReceived)
-//     .then(() => console.log('The order is ready and handed over to the Zomato delivery guy!') )
-//     .catch((err) => console.log(err))
-// }

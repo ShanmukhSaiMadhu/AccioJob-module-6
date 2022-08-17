@@ -49,6 +49,8 @@ const resetSignupFields = () => {
     document.getElementById('signup-email').value = ''
     document.getElementById('signup-phone-number').value = ''
     document.getElementById('signup-password').value = ''
+    document.getElementById('signup-confirm-password').value = ''
+    document.getElementById('tnC').checked = false
 }
 
 const resetLoginFields = () => {
@@ -62,34 +64,86 @@ const signup = () => {
     let email = document.getElementById('signup-email').value
     let phone = document.getElementById('signup-phone-number').value
     let password = document.getElementById('signup-password').value
+    let confirmPassword = document.getElementById('signup-confirm-password').value
+    let tnCInput = document.getElementById('tnC').checked
+    let emailExist = document.getElementById('signup-email-exist')
+
+    //Validation
+    if(firstName) {
+        document.getElementById('signup-first-name-invalid').style.display = 'none'
+    }else {
+        document.getElementById('signup-first-name-invalid').style.display = 'block'
+    }
+
+    if(lastName) {
+        document.getElementById('signup-last-name-invalid').style.display = 'none'
+    }else {
+        document.getElementById('signup-last-name-invalid').style.display = 'block'
+    }
+
+    if(email && email.includes('@') && email.includes('.') && email.lastIndexOf('.') <= email.length - 3 && email.indexOf('@') != 0) {
+        document.getElementById('signup-email-invalid').style.display = 'none'
+    }else {
+        document.getElementById('signup-email-invalid').style.display = 'block'
+    }
+
+    if(phone.length < 10) {
+        document.getElementById('signup-phone-number-invalid').style.display = 'block'
+    }else {
+        document.getElementById('signup-phone-number-invalid').style.display = 'none'
+    }
+
+    if(password.length < 8) {
+        document.getElementById('signup-password-invalid').style.display = 'block'
+    }else {
+        document.getElementById('signup-password-invalid').style.display = 'none'
+    }
+
+    if(confirmPassword != password && confirmPassword.length < 8) {
+        document.getElementById('signup-confirm-password-invalid').style.display = 'block'
+    }else {
+        document.getElementById('signup-confirm-password-invalid').style.display = 'none'
+    }
+
+    if(tnCInput) {
+        document.getElementById('signup-tnC-invalid').style.display = 'none'
+    } else {
+        document.getElementById('signup-tnC-invalid').style.display = 'block'
+    }
 
     let signupSuccessAlert = document.getElementById('signup-alert-success')
     let signupFailureAlert = document.getElementById('signup-alert-failure')
-
-    let dupEmailCheck = DB_USERS.find(element => element.email === email)
-
-    // if(dupEmailCheck) {
-    //     signupFailureAlert.style.display = 'block'
-    // }else {
-        
-    // }
 
     let userDetails = {
         firstName,
         lastName,
         email,
         password:  encrypt(password),
-        phone
+        confirmPassword: encrypt(confirmPassword),
+        phone,
+        tnCInput
     }
 
-    DB_USERS.push(userDetails)
-    signupSuccessAlert.style.display = 'block'
 
+    let dupEmailCheck = DB_USERS.find(element => element.email === email)
+
+    if(dupEmailCheck) {
+        signupFailureAlert.style.display = 'block'
+    }
+
+    if(userDetails.password === userDetails.confirmPassword && userDetails.phone.length === 10 && userDetails.tnCInput === true && !dupEmailCheck) {
+        signupSuccessAlert.style.display = 'block'
+        signupFailureAlert.style.display = 'none'
+        DB_USERS.push(userDetails)
+        resetSignupFields()
+    }
+    else {
+        signupSuccessAlert.style.display = 'none'
+        signupFailureAlert.style.display = 'block'
+    }
+    
     console.log(DB_USERS)
 
-    
-
-    resetSignupFields()
 }
 
 const login = () => {

@@ -6,7 +6,6 @@
 
 html {
 	scroll-behavior: smooth;
-	min-width: 100vw;
 	min-height: 100vh;
 }
 
@@ -21,7 +20,7 @@ body {
 }
 
 .registration-form, .login-form{
-	width: 800px;
+	width: 80%;
 	margin: 10px auto;
 	border-radius: 20px;
 	padding: 10px 10px 30px;
@@ -49,11 +48,3 @@ body {
 .container-fluid {
 	width: 100vw;
 }
-
-/* @media screen and (max-width: 900px) {
-	body {
-		position: absolute;
-		width: 100vw;
-		max-width: 500px;
-	}
-} */

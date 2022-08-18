@@ -10,27 +10,44 @@
 </head>
 <body>
     <div class="container-fluid p-0">
-        <div class="header">
-            <h2 class="display-2 main-title text-center">Domino's pizza</h2>
-            <div class="input-group mb-3 order-search">
-                <input type="text" class="form-control" placeholder="Enter order ID" aria-label="Recipient's username" aria-describedby="button-addon2" id="order-id-input">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Execute</button>
+        <header class="header">
+            <h2 class="display-1 fw-bold main-title text-center">Domino's pizza</h2>
+        </header>
+        <h3 class="text-center text-white" id="order-id-display"></h3>
+        <div class="task-container">
+
+            <div class="background-container">
+                <div class="input-group mb-3 order-search">
+                    <input type="text" class="form-control" placeholder="Enter order ID" aria-label="Recipient's username" aria-describedby="button-addon2" id="order-id-input">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Execute</button>
+
+                    <h1 class="pizza-info">Domino's online ordering</h1>
+                    <h2 class="pizza-info">Yummy pizza delivered fast & fresh</h2>
+                </div>
+
+                
             </div>
+            
+
+            <div class="order-status-wrapper">
+                
+                <button type="button" class="btn btn-light btn-md order-status-block">Order placed</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Chef received the order and started preparing</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Pizza Sauce added</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">First layer of cheeze added</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Toppings added</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Second layer of cheeze added</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Pizza baked!</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Oregano added and packed</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">Package received at counter</button>
+                <button type="button" class="btn btn-light btn-md order-status-block">The order is ready and handed over to the Zomato delivery guy!</button>
+            </div>
+
+            
         </div>
+
         
-        <div class="order-status-wrapper">
-            <h3 class="main-title text-center" id="order-id-display"></h3>
-            <button type="button" class="btn btn-light btn-md order-status-block">Order placed</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Chef received the order and started preparing</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Pizza Sauce added</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">First layer of cheeze added</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Toppings added</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Second layer of cheeze added</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Pizza baked!</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Oregano added and packed</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">Package received at counter</button>
-            <button type="button" class="btn btn-light btn-md order-status-block">The order is ready and handed over to the Zomato delivery guy!</button>
-        </div>
+        
     </div>
     <!-- <div class="container m-0 p-0">
         

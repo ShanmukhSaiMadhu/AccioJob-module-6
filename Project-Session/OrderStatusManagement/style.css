@@ -21,8 +21,9 @@ html, body {
 header {
     margin-bottom: 1rem;
     
-    background-color: black;
-    color: rgba(255, 255, 255, 0.721);
+    background-color: #016db1b8;
+    /* background-color: black; */
+    color: white;
     width: 100%;
     height: 100%;
 }
@@ -62,12 +63,17 @@ header h2 {
     padding: 10px;
 }
 
+.pizza-info {
+    color: rgba(207, 219, 228, 0.6);
+}
+
 .order-status-wrapper {
     display: flex;
     flex-direction: column;
     width: 40%;
     border-radius: 10px;
-	background-color: rgba(50, 50, 50, 0.416);
+	background-color: #0093ee7a;
+    /* background-color: rgba(42, 42, 42, 0.708); */
 	padding: 1rem;
 	margin: 0 auto;
 }
@@ -77,6 +83,11 @@ header h2 {
     margin: 1rem auto;
     width: 99%;
     pointer-events: none;
+}
+
+#button-addon2:hover {
+    background-color: #E31937;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {

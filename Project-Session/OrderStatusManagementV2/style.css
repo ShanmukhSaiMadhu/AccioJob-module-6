@@ -13,7 +13,7 @@ html, body {
     font-weight: 600;
 }
 
-.order-id-input {
+.order-id-input-wrapper {
     width: 500px;
     margin: 25px auto;
 }

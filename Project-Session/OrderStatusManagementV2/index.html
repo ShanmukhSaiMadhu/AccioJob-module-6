@@ -12,27 +12,28 @@
     <div class="container">
         <h2 class="display-1 main-title text-center">Domino's pizza</h2>
 
-        <div class="input-group mb-3 order-id-input">
+        <div class="input-group mb-3 order-id-input-wrapper">
             <input type="text" class="form-control" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input">
-            <button class="btn btn-danger" type="button" id="button-addon2">Execute</button>
+            <button class="btn btn-danger" type="button" id="button-addon2" onclick="executeOrder()">Execute</button>
         </div>
 
-        <div class="row">
-            <div class="col-md-3 order-status-card">
+        <div class="row" id="order-cards-wrapper">
+            <!-- <div class="col-md-3 order-status-card">
                 <div class="card text-center">
                     <div class="card-header">
                       Order ID: <b>ABC12345</b>
                     </div>
                     <div class="card-body">
+                      <p class="card-text">Medium size pizza - 2 No's</p>
                       <p class="card-text">Bill Amount: <b>$25</b></p>
                       <p class="card-text"><span class="badge bg-success rounded-pill">First layer of cheeze</span></p>
-                      <!-- <a href="#" class="btn btn-sm btn-danger">Cancel</a> -->
+                      <a href="#" class="btn btn-sm btn-danger">Cancel</a>
                     </div>
                     <div class="card-footer">
                       18-08-2022 PM
                     </div>
                   </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

@@ -90,6 +90,7 @@
 			- average marks secured
 		*/
 
+    let avgMarks= []
     let studentScores = students.map( student => {
         let marksArray = Object.values(student.marks)
         let totalMarks = 0
@@ -99,24 +100,29 @@
 
         let averageMarks = totalMarks / marksArray.length
 
+        avgMarks.push(averageMarks)
+        console.log(avgMarks)
+        avgMarks.sort()
+        console.log(avgMarks)
+
         return {
-            name: student.name,
-            batch: student.batch,
-            averageMarks: averageMarks
+          sortMarks : avgMarks[0]
         }
+
     })
     console.log(studentScores)
 
-    let finalStudentDetails = studentScores.filter(student => {
-      if(student.averageMarks > 75)
-      return {
-            name: student.name,
-            batch: student.batch,
-            averageMarks: student.averageMarks
-        }
-    })
+    // let finalStudentDetails = studentScores.filter(student => {
+    //   console.log(student.averageMarks)
+    //   return {
+    //     name: student.name,
+    //     batch: student.batch,
+    //     averageMarks: student.averageMarks
+    //   }
+      
+    // })
     
-    console.log(finalStudentDetails)
+    // console.log(finalStudentDetails)
 
     </script>
 </head>

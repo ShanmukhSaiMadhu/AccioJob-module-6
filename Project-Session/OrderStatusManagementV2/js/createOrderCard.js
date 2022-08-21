@@ -1,8 +1,7 @@
-const executeOrder = () => {
-    let orderId = document.getElementById('order-id-input').value
-    document.getElementById('order-id-input').value = ''
-    
+const createOrderCard = (orderId) => {
     let orderCardsWrapper = document.getElementById('order-cards-wrapper')
+
+    const date = new Date()
 
     let colDiv = document.createElement('div')
     let cardDiv = document.createElement('div')
@@ -24,13 +23,20 @@ const executeOrder = () => {
     statusBadge.classList = 'badge bg-success rounded-pill'
     cardFooter.classList = 'card-footer'
 
+    statusBadge.id = orderId
+
     cardHeader.innerHTML = `Order ID: <b>${orderId}</b>`
     cardText1.innerText = 'Medium size pizza - 2 Nos'
     cardText2.innerHTML = `Bill Amount: <b>$25</b>`
     statusBadge.innerText = 'First layer of cheeze added'
-    cardFooter.innerText = '18-08-2022 PM'
-
-    
+    cardFooter.innerText = cardFooter.innerText = new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+      })
     orderCardsWrapper.appendChild(colDiv)
     colDiv.appendChild(cardDiv)
     cardDiv.append(cardHeader, cardBody)
@@ -38,4 +44,3 @@ const executeOrder = () => {
     cardText3.appendChild(statusBadge)
     cardDiv.appendChild(cardFooter)
 }
-

@@ -6,6 +6,7 @@ const createOrderCard = (orderId) => {
     let colDiv = document.createElement('div')
     let cardDiv = document.createElement('div')
     let cardHeader = document.createElement('div')
+    let cancleBtn = document.createElement('i')
     let cardBody = document.createElement('div')
     let cardText1 = document.createElement('p')
     let cardText2 = document.createElement('p')
@@ -16,6 +17,7 @@ const createOrderCard = (orderId) => {
     colDiv.classList = 'col-md-3 order-status-card'
     cardDiv.classList = 'card text-center'
     cardHeader.classList = 'card-header'
+    cancleBtn.classList = 'fa-solid fa-xmark cancle-btn'
     cardBody.classList = 'card-body'
     cardText1.classList = 'card-text'
     cardText2.classList = 'card-text'
@@ -25,7 +27,7 @@ const createOrderCard = (orderId) => {
 
     statusBadge.id = orderId
 
-    cardHeader.innerHTML = `Order ID: <b>${orderId}</b>`
+    cardHeader.innerHTML = `<span>Order ID: <b>${orderId}</b></span>`
     cardText1.innerText = 'Medium size pizza - 2 Nos'
     cardText2.innerHTML = `Bill Amount: <b>$25</b>`
     statusBadge.innerText = 'First layer of cheeze added'
@@ -39,8 +41,15 @@ const createOrderCard = (orderId) => {
       })
     orderCardsWrapper.appendChild(colDiv)
     colDiv.appendChild(cardDiv)
-    cardDiv.append(cardHeader, cardBody)
+    cardDiv.appendChild(cardHeader)
+    cardHeader.appendChild(cancleBtn)
+    cardDiv.appendChild(cardBody)
     cardBody.append(cardText1, cardText2, cardText3)
     cardText3.appendChild(statusBadge)
     cardDiv.appendChild(cardFooter)
+
+    cancleBtn.addEventListener('click', () => {
+        // orderCardsWrapper.removeChild(colDiv)
+        colDiv.style.display = 'none'
+    })
 }

@@ -71,44 +71,32 @@
       }
     ]
 
-    let avgMarks = []
+    let averageMarks = 0
     let studentDetails = students.map((student) => {
         let marksArray = Object.values(student.marks)
         let totalMarks = 0
         marksArray.forEach(mark => totalMarks = totalMarks + mark)
 
-        let averageMarks = totalMarks / marksArray.length
-        
-        avgMarks.push(averageMarks)
-        avgMarks.sort()
+        averageMarks = totalMarks / marksArray.length
 
-        avgMarks.forEach((mark) => {
-          return {
-            name : student.name,
-            batch: student.batch,
-            averageMarks: mark
-          }
-        })
-        // return {
-        //     name : student.name,
-        //     batch: student.batch,
-        //     averageMarks: avgMarks
-        // }
+        return {
+          name : student.name,
+          batch: student.batch,
+          averageMarks: averageMarks
+        }
     })
 
+    // console.log(studentDetails)
 
-    // let avgMarks = []
-    // let finalStudentDetails = studentDetails.map((student) => {
-    //   avgMarks.push(student.averageMarks)
-    //   avgMarks.sort()
-    //   return {
-    //     name : student.name,
-    //     batch: student.batch,
-    //     averageMarks: avgMarks
-    //   }
-    // })
+    function sortMarksDescending(s1, s2) {
+      if(s2.averageMarks === s1.averageMarks) {
+        return s1.batch - s2.batch;
+      } else {
+        return s2.averageMarks - s1.averageMarks
+      }
+    }
 
-    console.log(studentDetails)
+    console.log(studentDetails.sort(sortMarksDescending))
     
 
     // let finalStudentDetails = studentDetails.filter((student) => {

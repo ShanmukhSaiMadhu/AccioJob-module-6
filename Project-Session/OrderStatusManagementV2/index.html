@@ -9,18 +9,92 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h2 class="display-1 main-title text-center">Domino's pizza</h2>
+    <div class="container-fluid">
 
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand text-white" href="#">Eatwell Food's</a>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active home" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link tracking" href="#order-cards-wrapper">Tracking</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link cart" href="#">Cart</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        <div class="alert alert-danger" id="alert" role="alert">
+            Please enter a valid OrderID!
+        </div>
         <div class="input-group mb-3 order-id-input-wrapper">
             <input type="text" class="form-control" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input">
-            <button class="btn btn-danger" type="button" id="button-addon2" onclick="executeOrder()">Execute</button>
+            <button class=" btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Track</button>
         </div>
 
-        <div class="row" id="order-cards-wrapper">    
-        </div>
+        <div class="row" id="order-cards-wrapper">
+            <div class="col-md-3 order-status-card">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <span>Order ID: <b>1</b></span>
+                        <i class="fa-solid fa-xmark cancle-btn"></i>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Item</th>
+										<th scope="col">Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Medium Corn</td>
+										<td>$5.00</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>Large Mushroom</td>
+										<td>$7.50</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>Medium Paneer</td>
+										<td>$4.75</td>
+									</tr>
+									<tr>
+										<th colspan="2">Total</th>
+										<td>$17.25</td>
+									</tr>
+								</tbody>
+							</table>
+						</p>
+                        <!-- <p class="card-text">Medium size pizza - 2 Nos</p>
+                        <p class="card-text">Bill Amount: <b>$25</b></p> -->
+                        <p class="card-text"><span class="badge bg-success rounded-pill" id="1">Order Picked Up</span></p>
+                    </div>
+                    <div class="card-footer">August 23, 2022 at 10:38:22 PM</div>
+                </div>
+            </div>
+        </div>  
     </div>
 
+    <script src="https://kit.fontawesome.com/1c1373f54b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/createOrderCard.js"></script>

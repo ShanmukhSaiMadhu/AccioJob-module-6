@@ -1,3 +1,23 @@
+const homeConatiner = document.getElementById('home-container')
+const trackingContainer = document.getElementById('tracking-container')
+
+
+const displayHome = () => {
+    homeConatiner.classList = 'active'
+    trackingContainer.classList.remove = 'active'
+
+    homeConatiner.style.display = 'block'
+    trackingContainer.style.display = 'none'
+}
+
+const displayTracking = () => {
+    trackingContainer.classList = 'active'
+    homeConatiner.classList.remove = 'active'
+
+    trackingContainer.style.display = 'block'
+    homeConatiner.style.display = 'none'
+}
+
 const executeOrder = async () => {
 
     let orderId = document.getElementById('order-id-input').value

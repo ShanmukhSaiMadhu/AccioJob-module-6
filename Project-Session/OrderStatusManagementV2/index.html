@@ -9,21 +9,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
 
-        <nav class="navbar navbar-expand-lg">
+      <!--------------------   NAVBAR CONTAINER   -------------------->
+      <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" >
+              
+                <span class="navbar-toggler-icon"><i class="fa-solid fa-bars toggle-btn"></i></span>
               </button>
-              <a class="navbar-brand text-white" href="#">Eatwell Food's</a>
+              <a class="navbar-brand text-white" href="#home-container">Eatwell Food's</a>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active home" aria-current="page" href="#">Home</a>
+                    <a class="nav-link home" aria-current="page" href="#home-container" onclick="displayHome()">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link tracking" href="#order-cards-wrapper">Tracking</a>
+                    <a class="nav-link tracking" href="#tracking-container" onclick="displayTracking()">Tracking</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link cart" href="#">Cart</a>
@@ -35,69 +37,174 @@
                 </form>
               </div>
             </div>
-          </nav>
-        <div class="alert alert-danger" id="alert" role="alert">
-            Please enter a valid OrderID!
-        </div>
-        <div class="input-group mb-3 order-id-input-wrapper">
-            <input type="text" class="form-control" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input">
-            <button class=" btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Track</button>
-        </div>
+      </nav>
 
-        <div class="row" id="order-cards-wrapper">
-            <div class="col-md-3 order-status-card">
-                <div class="card text-center">
-                    <div class="card-header">
-                        <span>Order ID: <b>1</b></span>
-                        <i class="fa-solid fa-xmark cancle-btn"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-							<table class="table">
-								<thead>
-									<tr>
-										<th scope="col">#</th>
-										<th scope="col">Item</th>
-										<th scope="col">Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Medium Corn</td>
-										<td>$5.00</td>
-									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Large Mushroom</td>
-										<td>$7.50</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td>Medium Paneer</td>
-										<td>$4.75</td>
-									</tr>
-									<tr>
-										<th colspan="2">Total</th>
-										<td>$17.25</td>
-									</tr>
-								</tbody>
-							</table>
-						</p>
-                        <!-- <p class="card-text">Medium size pizza - 2 Nos</p>
-                        <p class="card-text">Bill Amount: <b>$25</b></p> -->
-                        <p class="card-text"><span class="badge bg-success rounded-pill" id="1">Order Picked Up</span></p>
-                    </div>
-                    <div class="card-footer">August 23, 2022 at 10:38:22 PM</div>
+      <!--------------------   HOME CONTAINER   -------------------->
+      <div class="home-container" id="home-container">
+        <div class="items-card-wrapper">
+          <div class="row row-cols-1 row-cols-md-3 g-3 m-2">
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://b.zmtcdn.com/data/pictures/4/2800004/bedddb08e3eafa541fdec9db26613993.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*" class="card-img-top" alt="Veg Pizza">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Veggie Paradise</h5>
+                  <p class="card-text">The awesome foursome! Golden corn, black olives, capsicum, red paprika.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
                 </div>
+              </div>
             </div>
-        </div>  
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Burger">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">
+                    Chicken Whopper</h5>
+                  <p class="card-text">Our Signature chicken burger made with a crunchy chicken fillet, veggies & a delicious mayo sauce</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://b.zmtcdn.com/data/dish_photos/c39/b6fb95ad8187b6d7070069b6b5e09c39.jpg" class="card-img-top" alt="Chicken Noodles">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Chicken Noodles</h5>
+                  <p class="card-text">Chicken noodles are a delicious flavor packed meal of stir fried noodles, chicken, vegetables and sauces. Made in Chinese Style!</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://wallpapercave.com/wp/wp8728497.jpg" class="card-img-top" alt="Crispy Chicken">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Hot & Crispy Chicken</h5>
+                  <p class="card-text">12 pc chicken strips served with 4 delicious dips.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Fish">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Salmon Fish</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero fugit molestias deserunt, at commodi consequuntur aliquid blanditiis. Saepe tempora consequuntur nobis quasi ullam vel suscipit architecto et illo! Eaque, error.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Chilli-Prawns.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Chilli Prawns</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eveniet obcaecati quis animi quo nesciunt temporibus, nemo ipsam suscipit, soluta numquam veniam ipsa cumque, sit officia debitis neque ducimus nihil?</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://swatisani.net/kitchen/wp-content/uploads/2015/10/IMG_9526.jpg" class="card-img-top" alt="Biryani">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Chicken Biryani</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita placeat quidem aliquid quas sequi autem voluptas laborum cumque perspiciatis fugit mollitia cupiditate impedit, nihil cum culpa saepe iste ducimus officiis.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://images.pexels.com/photos/1603898/pexels-photo-1603898.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Sandwich">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Peri Peri Chicken Sandwich</h5>
+                  <p class="card-text">Let your tastebuds travel the world with African peri peri flavoured chicken served with nutritious veggies and packaged in your favourite bread of choice.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://images.unsplash.com/photo-1608219994488-cc269412b3e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZnJpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Fries">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Potato Fries</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure officiis aliquid eaque consequuntur cupiditate sapiente aut aliquam necessitatibus? Itaque asperiores quibusdam dolores atque aperiam vitae ea autem explicabo ipsum hic.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://indianpakwan.com/wp-content/uploads/2021/01/Chicken-manchurian-1200x676.jpg" class="card-img-top" alt="Manchuria">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Chicken Manchuria</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque odio officiis perferendis reiciendis. Accusantium beatae placeat, voluptatem ipsum, laboriosam consectetur nostrum, quasi eos tempora molestias ex consequatur id ratione voluptatibus.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://images.unsplash.com/photo-1643268972535-a2b100ff3632?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9zYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Dosa">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Onion Dosa</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, officia dolores autem cum amet recusandae nemo sit dolor natus iste iure magnam incidunt ipsa, vel unde praesentium laboriosam quasi rerum.</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-auto">
+                <img src="https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Ice cream">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Chocolate Over Load Ice cream</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae totam debitis nam vitae possimus enim officiis temporibus dolorum quo consectetur recusandae accusamus vero, excepturi reiciendis laudantium nihil, velit asperiores. Magni!</p>
+                  <a href="#tracking-container" class="btn btn-outline-danger float-end">Add to cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--------------------   TRACKING CONTAINER   -------------------->
+      <div class="tracking-container" id="tracking-container" style="display: none;">
+
+          <!--------------------   ALERT   -------------------->
+          <div class="alert alert-danger" id="alert" role="alert">
+            Please enter a valid OrderID!
+          </div>
+
+          <!--------------------  ORDER INPUT   -------------------->
+          <div class="input-group mb-3 order-id-input-wrapper">
+              <input type="text" class="form-control" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input">
+              <button class=" btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Track</button>
+          </div>
+
+          <!--------------------  CARD CREATION   -------------------->
+          <div class="row" id="order-cards-wrapper">
+          </div>
+      </div>
+          
     </div>
 
     <script src="https://kit.fontawesome.com/1c1373f54b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/createOrderCard.js"></script>
+    <script src="js/createOrderCardBillTable.js"></script>
     <script src="js/orderStatus.js"></script>
 </body>
 </html>

@@ -8,12 +8,21 @@
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     min-height: 100vh;
-    min-width: 100vw;
     margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -24,18 +33,38 @@ body {
     width: 100%;
 }
 
-.navbar a {
+/* .navbar a {
     color: rgba(255, 255, 255, 0.432);
+    text-decoration: none;
+} */
+
+
+
+ul.navbar-nav li a.nav-link {
+    color: rgba(255, 255, 255, 0.432);
+    text-decoration: none;
 }
 
-.navbar a:hover {
+ul.navbar-nav li a.nav-link:hover {
     color: white;
 }
 
-.navbar .navbar-toggler .navbar-toggler-icon {
-    border: none;
+ul.navbar-nav li a.nav-link:active {
     color: white;
 }
+
+ul.navbar-nav li a.nav-link:link {
+    text-decoration: none;
+}
+
+
+span i {
+    margin: 0 auto;
+}
+
+.navbar-toggler:focus, .toggle-btn:focus, [type="button"]:focus {
+    outline: none;
+ }
 
 form .btn:hover {
     background-color: #e31837;
@@ -54,14 +83,29 @@ form .btn:hover {
     color: white;
 }
 
+                        /* Home Part */
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+
+                        /* Order Part */
+
 .order-id-input-wrapper {
-    width: 25%;
+    width: 30%;
     margin: 25px auto;
+}
+
+.order-id-input-wrapper button {
+    outline: none;
 }
 
 .order-status-card {
     margin: 20px 0;
-    min-width: 25%;
+    min-width: auto !important;
 }
 
 .order-status-card .card {
@@ -96,9 +140,48 @@ form .btn:hover {
 
 .order-status-card .rounded-pill {
     font-size: 1em;
+    word-wrap: break-word;
+    height: auto;
 }
 
 .cancle-btn:hover {
     color: #e31837;
     cursor: pointer;
+}
+
+@media screen and (max-width: 991px)  {
+    .navbar .navbar-toggler .navbar-toggler-icon {
+        border: none;
+        color: white;
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width: 768px)  {
+    .order-id-input-wrapper {
+        width: 50%;
+        margin: 25px auto;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 30vw;
+        object-fit: cover;
+    }
+    
+}
+
+
+@media screen and (max-width: 550px)  {
+    .order-id-input-wrapper {
+        width: 60%;
+        margin: 25px auto;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 45vw;
+        object-fit: cover;
+    }
 }

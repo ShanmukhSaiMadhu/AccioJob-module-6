@@ -78,8 +78,17 @@ form .btn:hover {
     width: 50%;
 }
 
-#button-addon2:hover {
+#createNewOrderBtn {
+    border-radius: 3px;
+}
+
+#createNewOrderBtn:hover {
     background-color: #E31937;
+    color: white;
+}
+
+#execute-order:hover {
+    background-color: #038958;
     color: white;
 }
 
@@ -99,8 +108,12 @@ form .btn:hover {
     margin: 25px auto;
 }
 
-.order-id-input-wrapper button {
+.order-id-input-wrapper .btn {
     outline: none;
+    /* border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px; */
 }
 
 .order-status-card {
@@ -174,6 +187,11 @@ form .btn:hover {
 
 
 @media screen and (max-width: 550px)  {
+
+    #createNewOrderBtn {
+        margin: auto;
+    }
+
     .order-id-input-wrapper {
         width: 60%;
         margin: 25px auto;

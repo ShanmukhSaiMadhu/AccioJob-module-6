@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 4</title>
 </head>
-<script>
+
+<body>
+  <script>
     let students = [
       {
         name: 'Vaishnavi',
@@ -89,6 +91,19 @@
     studentDetails.sort((element1, element2) => element2.averageMarks - element1.averageMarks)
 
 		console.log(studentDetails)
+
+    const finalStudentDetails = []
+
+    for(let i = 0; i < studentDetails.length - 1; ++i) {
+      if(studentDetails[i].averageMarks === studentDetails[i + 1].averageMarks) {
+        if(studentDetails[i + 1].batch < studentDetails[i].batch) {
+          finalStudentDetails.push(studentDetails[i + 1])
+          finalStudentDetails.push(studentDetails[i])
+        }
+      }
+    }
+
+    console.log(finalStudentDetails)
     
 
     // let finalStudentDetails = studentDetails.filter((student) => {
@@ -107,7 +122,5 @@
             If equal, then on basis of batch number (Lowest first)
         */
 </script>
-<body>
-    
 </body>
 </html>

@@ -189,8 +189,62 @@
 
           <!--------------------  ORDER INPUT   -------------------->
           <div class="input-group mb-3 order-id-input-wrapper">
-              <input type="text" class="form-control" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input">
-              <button class=" btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Track</button>
+              <!-- <input type="text" class="form-control" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input">
+              <button class=" btn btn-outline-secondary" type="button" id="button-addon2" onclick="executeOrder()">Track</button> -->
+
+              <!-- Button trigger modal -->
+            <button type="button" class="btn btn-outline-secondary m-md-auto m-sm-auto" data-bs-toggle="modal" id="createNewOrderBtn" data-bs-target="#order-input-modal">
+              Create New Order
+            </button>
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="order-input-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Enter order details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- <input type="text" class="form-control mb-3" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input" required> -->
+
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Item 1" id="item-1" aria-describedby="button-addon2" required>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="number" class="form-control" placeholder="Price" id="price-1" aria-describedby="button-addon2" required>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Item 2" id="item-2" aria-describedby="button-addon2" required>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="number" class="form-control" placeholder="Price" id="price-2" aria-describedby="button-addon2" required>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Item 3" id="item-3" aria-describedby="button-addon2" required>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="number" class="form-control" placeholder="Price" id="price-3" aria-describedby="button-addon2" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger m-md-1" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-success m-md-1" data-bs-toggle="modal" data-bs-dismiss="modal" id="execute-order" onclick="executeOrder()">
+                      Execute
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!--------------------  CARD CREATION   -------------------->

@@ -72,7 +72,10 @@ const executeOrder = async () => {
 
         if(billDetails.length == 0) return
 
-        document.getElementById('empty-order').innerHTML = ''
+        if(currentOrderNumber === 1) {
+            document.getElementById('empty-order').style.display = 'none'
+        }
+        
 
         generateItems()
 

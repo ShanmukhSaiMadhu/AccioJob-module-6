@@ -1,3 +1,5 @@
+let numberOfOrders = 0
+
 const createOrderCard = (orderId, billDetails) => {
 	let orderCardsWrapper = document.getElementById('order-cards-wrapper')
 
@@ -31,6 +33,7 @@ const createOrderCard = (orderId, billDetails) => {
   });
 
 	statusBadge.id = orderId
+	colDiv.id = 'order-status-card'
 
 	let billTable = createOrderCardBillTable(billDetails)
 
@@ -44,8 +47,18 @@ const createOrderCard = (orderId, billDetails) => {
 	colDiv.appendChild(cardDiv)
 	orderCardsWrapper.appendChild(colDiv)
 
+	document.getElementById('order-status-card').insert
+
 	cancelBtn.addEventListener('click', () => {
 		// orderCardsWrapper.removeChild(colDiv)
+		
 		colDiv.style.display = 'none'
+		numberOfOrders--
+
+		if(numberOfOrders === 0) {
+			document.getElementById('empty-order').style.display = 'block'
+		}
 	})
+
+	numberOfOrders++
 }

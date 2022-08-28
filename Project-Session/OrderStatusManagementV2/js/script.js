@@ -74,12 +74,16 @@ const executeOrder = async () => {
 
         document.getElementById('empty-order').innerHTML = ''
 
+        generateItems()
+
         trackingContainer.style.display = 'block'
         homeContainer.style.display = 'none'
 
         let orderId = createOrderId()
 
         createOrderCard(orderId, billDetails)
+
+        billDetails = []
 
         currentOrderNumber++
 

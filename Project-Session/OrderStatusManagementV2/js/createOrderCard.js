@@ -56,7 +56,7 @@ const createOrderCard = (orderId, billDetails) => {
 		numberOfOrders--
 
 		if(numberOfOrders === 0) {
-			document.getElementById('empty-order').style.display = 'block'
+			document.getElementById('empty-order').style.display = 'none'
 		}
 	})
 

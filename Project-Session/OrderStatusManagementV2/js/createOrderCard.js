@@ -10,7 +10,7 @@ const createOrderCard = (orderId, billDetails) => {
 	let statusBadge = document.createElement('span')
 	let cardFooter = document.createElement('div')
 
-	colDiv.classList = 'col-md-3 order-status-card'
+	colDiv.classList = 'col-md-4 col-lg-3 order-status-card'
 	cardDiv.classList = 'card text-center'
 	cardHeader.classList = 'card-header'
 	cancelBtn.classList = 'fa-solid fa-xmark cancel-btn'

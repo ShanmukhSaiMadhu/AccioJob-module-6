@@ -1,22 +1,84 @@
-const homeConatiner = document.getElementById('home-container')
+const homeContainer = document.getElementById('home-container')
 const trackingContainer = document.getElementById('tracking-container')
-
+trackingContainer.style.display = 'none'
 
 const displayHome = () => {
-    homeConatiner.classList = 'active'
-    trackingContainer.classList.remove = 'active'
+    // homeConatiner.classList = 'active'
+    // trackingContainer.classList.remove = 'active'
 
-    homeConatiner.style.display = 'block'
     trackingContainer.style.display = 'none'
+    homeContainer.style.display = 'block'
+    
 }
 
 const displayTracking = () => {
-    trackingContainer.classList = 'active'
-    homeConatiner.classList.remove = 'active'
+    // trackingContainer.classList = 'active'
+    // homeContainer.classList.remove = 'active'
 
     trackingContainer.style.display = 'block'
-    homeConatiner.style.display = 'none'
+    homeContainer.style.display = 'none'
 }
+
+let home = document.getElementById('home-items')
+
+let basket = JSON.parse(localStorage.getItem('data')) || [];
+console.log(basket)
+
+let generateItems = () => {
+    return (home.innerHTML = homeItemsData.map((x) => {
+        let {id, name, price, desc, img} = x
+        let search = basket.find((x) => x.id === id) || []
+
+        return `
+            <div class="col" id="product-id-${id}">
+              <div class="card h-auto">
+                <img src="${img}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">${name}</h5>
+                  <p class="card-text">${desc}</p>
+                  <h2 class="float-start">$ ${price}</h2>
+                  <a href="#${id}" class="btn btn-outline-danger float-end" id="${id}" onclick="addToCart(${id})">Add to cart</a>
+                </div>
+              </div>
+            </div>
+        `
+        
+    }).join(''))
+}
+
+generateItems()
+
+
+let addToCart = ((id) => {
+    document.getElementById(id).innerText = 'Added!'
+    document.getElementById(id).classList.replace('btn-outline-danger', 'btn-outline-success')
+    document.getElementById(id).onmouseover = 'green'
+
+    let selectedItem = id
+
+    let search = basket.find((x) => x.id === selectedItem.id)
+
+    if(search === undefined) {
+        basket.push({
+            id: selectedItem.id,
+            item: 1
+        })
+
+        localStorage.setItem('data', JSON.stringify(basket))
+    }
+})
+
+
+// let changeBtnText = (id) => {
+//     let selectedBtn = id
+//     console.log(selectedBtn)
+//     let btn_id = document.getElementById(`${selectedBtn}-btn`);
+//     console.log(btn_id)
+//     let anchorTag = btn_id.getElementsByTagName('a');
+//     anchorTag[0].innerText='High Quality'
+// }
+
+
 
 let currentOrderNumber = 1
 

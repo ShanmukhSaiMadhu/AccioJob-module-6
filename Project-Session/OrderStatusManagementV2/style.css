@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,400;0,600;1,200&family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka+One&family=Poppins:ital,wght@0,400;0,600;1,200&family=Rubik+Iso&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',serif;
 }
 
 html {
-    margin: 0;
-    padding: 0;
     scroll-behavior: smooth;
 }
 
@@ -22,8 +22,10 @@ body {
     min-height: 100vh;
     margin: 0 auto;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
+
+/*----------------Navbar------------- */
 
 .navbar {
     text-align: center;
@@ -32,13 +34,6 @@ body {
     font-weight: 600;
     width: 100%;
 }
-
-/* .navbar a {
-    color: rgba(255, 255, 255, 0.432);
-    text-decoration: none;
-} */
-
-
 
 ul.navbar-nav li a.nav-link {
     color: rgba(255, 255, 255, 0.432);
@@ -72,17 +67,13 @@ form .btn:hover {
     border: none;
 }
 
-#alert {
-    display: none;
-    margin: 0 auto;
-    width: 50%;
-}
+/*-----------------------Tracking Page-----------------------------*/
 
-#createNewOrderBtn {
+#create-new-order-btn {
     border-radius: 3px;
 }
 
-#createNewOrderBtn:hover {
+#create-new-order-btn:hover {
     background-color: #E31937;
     color: white;
 }
@@ -94,27 +85,58 @@ form .btn:hover {
 
                         /* Home Part */
 
+ /*                             carousel                        */
+
+ .carousel-item {
+    cursor: pointer;
+ }
+
+ .carousel-item img {
+    width: auto;
+    height: 75vh;
+    filter: brightness(50%) saturate(140%);
+ }
+
+ .carousel-item .carousel-caption {
+    font-family: 'Fredoka One', sans-serif;
+ }
+
+
+
+ /*                             Home Items                        */
+
 .card-img-top {
     width: 100%;
-    height: 15vw;
+    height: 40vh;
     object-fit: cover;
 }
 
+/*-----------------------Tracking Page-----------------------------*/
 
-                        /* Order Part */
+#create-new-order-btn {
+    border-radius: 3px;
+}
+
+#create-new-order-btn:hover {
+    background-color: #E31937;
+    color: white;
+}
+
+#execute-order:hover {
+    background-color: #038958;
+    color: white;
+}                        
 
 .order-id-input-wrapper {
     width: 30%;
-    margin: 25px auto;
+    margin: 0 auto;
 }
 
 .order-id-input-wrapper .btn {
     outline: none;
-    /* border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; */
 }
+
+/* card */
 
 .order-status-card {
     margin: 20px 0;
@@ -168,10 +190,24 @@ form .btn:hover {
         color: white;
         display: block;
     }
+
+    .carousel-item img {
+        width: 50%;
+        height: 60vh;
+        margin: auto;
+        filter: brightness(50%) saturate(140%);
+     }
     
 }
 
 @media screen and (max-width: 768px)  {
+
+    .carousel-item img {
+        width: 50%;
+        height: 50vh;
+        filter: brightness(50%) saturate(140%);
+     }
+
     .order-id-input-wrapper {
         width: 50%;
         margin: 25px auto;
@@ -179,7 +215,8 @@ form .btn:hover {
 
     .card-img-top {
         width: 100%;
-        height: 30vw;
+        height: 40vh;
+        margin: auto;
         object-fit: cover;
     }
     
@@ -187,6 +224,13 @@ form .btn:hover {
 
 
 @media screen and (max-width: 550px)  {
+
+    .carousel-item img {
+        width: 50%;
+        height: 30vh;
+        margin: 0 auto;
+        filter: brightness(50%) saturate(140%);
+     }
 
     #createNewOrderBtn {
         margin: auto;
@@ -199,7 +243,8 @@ form .btn:hover {
 
     .card-img-top {
         width: 100%;
-        height: 45vw;
+        height: 30vh;
+        margin: 0 auto;
         object-fit: cover;
     }
 }

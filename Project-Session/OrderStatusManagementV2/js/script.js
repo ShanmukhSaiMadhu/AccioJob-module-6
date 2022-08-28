@@ -1,19 +1,20 @@
 const homeContainer = document.getElementById('home-container')
 const trackingContainer = document.getElementById('tracking-container')
+
 trackingContainer.style.display = 'none'
+let billDetails = []
 
 const displayHome = () => {
-    // homeConatiner.classList = 'active'
-    // trackingContainer.classList.remove = 'active'
+    homeContainer.classList.add = 'active'
+    trackingContainer.classList.remove = 'active'
 
-    trackingContainer.style.display = 'none'
     homeContainer.style.display = 'block'
-    
+    trackingContainer.style.display = 'none'
 }
 
 const displayTracking = () => {
-    // trackingContainer.classList = 'active'
-    // homeContainer.classList.remove = 'active'
+    trackingContainer.classList.add = 'active'
+    homeContainer.classList.remove = 'active'
 
     trackingContainer.style.display = 'block'
     homeContainer.style.display = 'none'
@@ -21,13 +22,9 @@ const displayTracking = () => {
 
 let home = document.getElementById('home-items')
 
-let basket = JSON.parse(localStorage.getItem('data')) || [];
-console.log(basket)
-
 let generateItems = () => {
     return (home.innerHTML = homeItemsData.map((x) => {
         let {id, name, price, desc, img} = x
-        let search = basket.find((x) => x.id === id) || []
 
         return `
             <div class="col" id="product-id-${id}">
@@ -37,78 +34,50 @@ let generateItems = () => {
                   <h5 class="card-title fw-bold">${name}</h5>
                   <p class="card-text">${desc}</p>
                   <h2 class="float-start">$ ${price}</h2>
-                  <a href="#${id}" class="btn btn-outline-danger float-end" id="${id}" onclick="addToCart(${id})">Add to cart</a>
+                  <a href="#javascript:void(0);" class="btn btn-outline-danger float-end" id="${id}" onclick="addToCart(${id})">Add to cart</a>
                 </div>
               </div>
             </div>
         `
-        
     }).join(''))
 }
 
 generateItems()
 
 
-let addToCart = ((id) => {
+let addToCart = (id) => {
+
+    let selectedItem = id
+
+    let search = homeItemsData.find((x) => x.id == selectedItem)
     document.getElementById(id).innerText = 'Added!'
     document.getElementById(id).classList.replace('btn-outline-danger', 'btn-outline-success')
     document.getElementById(id).onmouseover = 'green'
 
-    let selectedItem = id
+    // console.log(homeItemsData[selectedItem].id)
 
-    let search = basket.find((x) => x.id === selectedItem.id)
+    billDetails.push(
+        {
+            item: search.name,
+            price: Number(search.price)
+        }
+    )
+}
 
-    if(search === undefined) {
-        basket.push({
-            id: selectedItem.id,
-            item: 1
-        })
-
-        localStorage.setItem('data', JSON.stringify(basket))
-    }
-})
-
-
-// let changeBtnText = (id) => {
-//     let selectedBtn = id
-//     console.log(selectedBtn)
-//     let btn_id = document.getElementById(`${selectedBtn}-btn`);
-//     console.log(btn_id)
-//     let anchorTag = btn_id.getElementsByTagName('a');
-//     anchorTag[0].innerText='High Quality'
-// }
-
-
+/* ----------Create Cards ------------ */
 
 let currentOrderNumber = 1
 
 const executeOrder = async () => {
 
+        if(billDetails.length == 0) return
+
+        document.getElementById('empty-order').innerHTML = ''
+
+        trackingContainer.style.display = 'block'
+        homeContainer.style.display = 'none'
+
         let orderId = createOrderId()
-
-        let item1 = document.getElementById('item-1').value
-        let price1 = document.getElementById('price-1').value
-        let item2 = document.getElementById('item-2').value
-        let price2 = document.getElementById('price-2').value
-        let item3 = document.getElementById('item-3').value
-        let price3 = document.getElementById('price-3').value
-
-        resetFields()
-
-        let billDetails = [
-            {
-                item: item1,
-                price: Number(price1),
-            },
-            {
-                item: item2,
-                price: Number(price2),
-            },
-            {
-                item: item3,
-                price: Number(price3),
-            }
-        ]
 
         createOrderCard(orderId, billDetails)
 
@@ -125,25 +94,25 @@ const executeOrder = async () => {
             await pizzaBaked(orderId)
             await oreganoAdded(orderId)
             await packageReceived(orderId)
-            document.getElementById(orderId).innerText = 'Order Picked Up'
+            document.getElementById(orderId).innerText = 'Delivered'
         }catch(err) {
             document.getElementById(orderId).innerText = err
-            console.log(err)
         }
-
-        
     }
 
-    const resetFields = () => {
-        // document.getElementById('order-id-input').value = ''
-        document.getElementById('item-1').value = ''
-        document.getElementById('price-1').value = ''
-        document.getElementById('item-2').value = ''
-        document.getElementById('price-2').value = ''
-        document.getElementById('item-3').value = ''
-        document.getElementById('price-3').value = ''
-    }
+    // const resetFields = () => {
+    //     // document.getElementById('order-id-input').value = ''
+    //     document.getElementById('item-1').value = ''
+    //     document.getElementById('price-1').value = ''
+    //     document.getElementById('item-2').value = ''
+    //     document.getElementById('price-2').value = ''
+    //     document.getElementById('item-3').value = ''
+    //     document.getElementById('price-3').value = ''
+    // }
 
+    const cardGray = (orderId) => {
+
+    }
     
     const createOrderId = () => {
         let todaysDate = new Date()

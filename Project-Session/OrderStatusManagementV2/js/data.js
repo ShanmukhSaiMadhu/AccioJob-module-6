@@ -1,7 +1,7 @@
 let homeItemsData = [
     {
       id: "11",
-      name: "Chicken Biryani",
+      name: "Chicken Dum Biryani",
       price: 15,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "https://swatisani.net/kitchen/wp-content/uploads/2015/10/IMG_9526.jpg",
@@ -9,7 +9,7 @@ let homeItemsData = [
     {
         id: "12",
         name: "Chicken Fry Biryani",
-        price: 200,
+        price: 20,
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
         img: "https://b.zmtcdn.com/data/dish_photos/23f/9e849f47387ecf5eb69d29c7a900323f.jpg?output-format=webp",
     },
@@ -79,7 +79,7 @@ let homeItemsData = [
     {
       id: "26",
       name: "Crispy Corn",
-      price: 350,
+      price: 12,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "https://b.zmtcdn.com/data/dish_photos/128/4c8a1a414c62aa62861d2ea72cb60128.jpg?output-format=webp",
     },

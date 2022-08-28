@@ -7,6 +7,7 @@
     <title>Order Status Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="container">
@@ -18,7 +19,7 @@
               
                 <span class="navbar-toggler-icon"><i class="fa-solid fa-bars toggle-btn"></i></span>
               </button>
-              <a class="navbar-brand text-white" href="index.html">Eatwell Food's</a>
+              <a class="navbar-brand text-white" href="#home-container" onclick="displayHome()">Eatwell Food's</a>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
@@ -28,13 +29,18 @@
                     <a class="nav-link tracking" href="#tracking-container" onclick="displayTracking()">Tracking</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link cart" href="#cart-container">Cart</a>
+                    <a href="#tracking-container">
+                      <button type="button" class="btn btn-outline-light m-md-1" data-bs-toggle="modal" data-bs-dismiss="modal" id="execute-order" onclick="executeOrder()">
+                      Place Order
+                      </button>
+                    </a>
                   </li>
                 </ul>
-                <form class="d-flex">
+                <!-- <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+                  
+                </form> -->
               </div>
             </div>
       </nav>
@@ -95,17 +101,21 @@
       <!--------------------   TRACKING CONTAINER   -------------------->
       <div class="tracking-container mt-2" id="tracking-container">
 
+        <div class="empty-order" id="empty-order">
+          <img src="empty-cart.gif" alt="">
+        </div>
+
           <!--------------------  ORDER INPUT   -------------------->
           <div class="input-group order-id-input-wrapper">
 
               <!-- Button trigger modal -->
-            <button type="button" class="btn btn-outline-secondary m-md-auto m-sm-auto" data-bs-toggle="modal" id="create-new-order-btn" data-bs-target="#order-input-modal">
+            <!-- <button type="button" class="btn btn-outline-secondary m-md-auto m-sm-auto" data-bs-toggle="modal" id="create-new-order-btn" data-bs-target="#order-input-modal">
               Create New Order
-            </button>
+            </button> -->
             
 
             <!-- Modal -->
-            <div class="modal fade" id="order-input-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="order-input-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -113,7 +123,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <!-- <input type="text" class="form-control mb-3" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input" required> -->
+                    <input type="text" class="form-control mb-3" placeholder="Enter order ID" aria-describedby="button-addon2" id="order-id-input" required>
 
                     <div class="row mb-3">
                       <div class="col-md-6">
@@ -150,7 +160,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <!--------------------  CARD CREATION   -------------------->
@@ -159,8 +169,11 @@
       </div>
          
       <!--------------------   CART CONTAINER   -------------------->
-      <div id="label" class="text-center"></div>
+      <!-- <div class="main-cart" id="main-cart">
+        <div id="label" class="text-center"></div>
       <div class="cart-container" id="cart-container"></div>
+      </div> -->
+      
     </div>
 
     <script src="https://kit.fontawesome.com/1c1373f54b.js" crossorigin="anonymous"></script>

@@ -10,7 +10,7 @@ const chefReceivedOrder =(orderId) => {
 const pizzaSauceAdded =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'Pizza Sauce added'
+            document.getElementById(orderId).innerText = 'Preparing Food'
             resolve()
         }, 10000)
     })
@@ -19,7 +19,7 @@ const pizzaSauceAdded =(orderId) => {
 const firstLayerOfCheeseAdded =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'First layer of cheeze added'
+            document.getElementById(orderId).innerText = 'Preparation Done'
             resolve()
         }, 5000)
     })
@@ -28,7 +28,7 @@ const firstLayerOfCheeseAdded =(orderId) => {
 const toppingsAdded =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'Toppings added'
+            document.getElementById(orderId).innerText = 'Packing...'
             resolve()
         }, 12000)
     })
@@ -37,7 +37,7 @@ const toppingsAdded =(orderId) => {
 const secondLayerOfCheeseAdded =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'Second layer of cheeze added'
+            document.getElementById(orderId).innerText = 'Received at counter'
             resolve()
         }, 5000)
     })
@@ -46,7 +46,7 @@ const secondLayerOfCheeseAdded =(orderId) => {
 const pizzaBaked =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'Pizza baked!'
+            document.getElementById(orderId).innerText = 'Order picked up!'
             resolve()
         }, 15000)
     })
@@ -55,7 +55,7 @@ const pizzaBaked =(orderId) => {
 const oreganoAdded =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'Oregano added and packed'
+            document.getElementById(orderId).innerText = 'On your way'
             resolve()
         }, 8000)
     })
@@ -64,8 +64,8 @@ const oreganoAdded =(orderId) => {
 const packageReceived =(orderId) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            document.getElementById(orderId).innerText = 'Package received at counter'
+            document.getElementById(orderId).innerText = 'Delivered'
             resolve()
-        }, 2000)
+        }, 3000)
     })
 }

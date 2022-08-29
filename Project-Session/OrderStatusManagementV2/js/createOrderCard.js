@@ -3,6 +3,9 @@ let numberOfOrders = 0
 const createOrderCard = (orderId, billDetails) => {
 	let orderCardsWrapper = document.getElementById('order-cards-wrapper')
 
+	
+	
+
 	let colDiv = document.createElement('div')
 	let cardDiv = document.createElement('div')
 	let cardHeader = document.createElement('div')
@@ -46,8 +49,6 @@ const createOrderCard = (orderId, billDetails) => {
 	cardDiv.appendChild(cardFooter)
 	colDiv.appendChild(cardDiv)
 	orderCardsWrapper.appendChild(colDiv)
-
-	document.getElementById('order-status-card').insert
 
 	cancelBtn.addEventListener('click', () => {
 		// orderCardsWrapper.removeChild(colDiv)

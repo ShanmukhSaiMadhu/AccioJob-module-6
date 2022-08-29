@@ -92,32 +92,24 @@ const executeOrder = async () => {
 
         try {
             await chefReceivedOrder(orderId)
-            await pizzaSauceAdded(orderId)
-            await firstLayerOfCheeseAdded(orderId)
-            await toppingsAdded(orderId)
-            await secondLayerOfCheeseAdded(orderId)
-            await pizzaBaked(orderId)
-            await oreganoAdded(orderId)
+            await preparingFood(orderId)
+            await preparationDone(orderId)
+            await packing(orderId)
+            await receivedAtCounter(orderId)
+            await orderPickUp(orderId)
+            await onYourWay(orderId)
             await packageReceived(orderId)
+
             document.getElementById(orderId).innerText = 'Delivered'
+
         }catch(err) {
             document.getElementById(orderId).innerText = err
         }
     }
 
-    // const resetFields = () => {
-    //     // document.getElementById('order-id-input').value = ''
-    //     document.getElementById('item-1').value = ''
-    //     document.getElementById('price-1').value = ''
-    //     document.getElementById('item-2').value = ''
-    //     document.getElementById('price-2').value = ''
-    //     document.getElementById('item-3').value = ''
-    //     document.getElementById('price-3').value = ''
-    // }
+ 
 
-    const cardGray = (orderId) => {
-
-    }
+    
     
     const createOrderId = () => {
         let todaysDate = new Date()
